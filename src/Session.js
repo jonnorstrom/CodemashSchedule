@@ -26,6 +26,7 @@ class Session extends Component {
       showHide: this.state.showHide === "Show" ? "Hide" : "Show"
     })
   }
+  
   render() {
     const {title, abstract} = this.props
     return (

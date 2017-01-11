@@ -1,15 +1,27 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Session from './Session'
+import SessionList from './SessionList'
 
 const session = {
+  id: 1,
   title: "React Everywhere",
   abstract: "peace out",
   speakers: [{
     firstName: "Len"
   }]
 }
+
+const session2 = {
+  id: 2,
+  title: "React Everywhere",
+  abstract: "peace out",
+  speakers: [{
+    firstName: "Len"
+  }]
+}
+
+const sessions = [session, session2]
 
 class App extends Component {
   render() {
@@ -20,12 +32,14 @@ class App extends Component {
           <h2>Welcome to CodeMash</h2>
         </div>
 
-        <Session {...session}/>
+        <SessionList sessions={sessions} />
 
 
       </div>
     );
   }
 }
+
+
 
 export default App;
