@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 
-class Speaker extends Component {
-  render() {
-    return (
-      <div>
-        {this.props.FirstName}
-      </div>
-    )
-  }
+const Speaker = (props) => {
+  return (
+    <div>{props.FirstName}</div>
+  )
 }
 
 class Session extends Component {
@@ -32,7 +28,7 @@ class Session extends Component {
     return (
       <div className="session-info">
         <p>{Title}</p>
-        <p><Speaker {...Speakers[0]}/></p>
+        <Speaker {...Speakers[0]}/>
         <a href="" onClick={this.toggleState.bind(this)}>{this.state.showHide} Details</a>
         { this.state.showDetails && <p>{Abstract}</p> }
       </div>
