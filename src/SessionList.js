@@ -4,9 +4,10 @@ import Session from './Session'
 class SessionList extends Component {
   render() {
     const { sessions } = this.props
+    console.log(sessions)
     return (
       <div>
-        { sessions.map(session => <Session key={session.id} { ...session }/>) }
+        { sessions.map(session => <Session key={session.Id} { ...session }/>) }
       </div>
     )
   }

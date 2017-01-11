@@ -22,3 +22,9 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.session-info {
+  text-align: left;
+  border-bottom: 3px black dotted;
+  padding: 10px;
+}

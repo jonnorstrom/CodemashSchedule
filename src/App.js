@@ -2,29 +2,26 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import SessionList from './SessionList'
-
-const session = {
-  id: 1,
-  title: "React Everywhere",
-  abstract: "peace out",
-  speakers: [{
-    firstName: "Len"
-  }]
-}
-
-const session2 = {
-  id: 2,
-  title: "React Everywhere",
-  abstract: "peace out",
-  speakers: [{
-    firstName: "Len"
-  }]
-}
-
-const sessions = [session, session2]
+const URL = "./session.json"
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      sessions: []
+    }
+
+    fetch(URL)
+      .then(r => r.json())
+      .then((sessions) => {
+        this.setState({
+          sessions: sessions
+        })
+      })
+  }
+
   render() {
+    const { sessions } = this.state
     return (
       <div className="App">
         <div className="App-header">

@@ -4,7 +4,7 @@ class Speaker extends Component {
   render() {
     return (
       <div>
-        {this.props.firstName}
+        {this.props.FirstName}
       </div>
     )
   }
@@ -26,25 +26,24 @@ class Session extends Component {
       showHide: this.state.showHide === "Show" ? "Hide" : "Show"
     })
   }
-  
-  render() {
-    const {title, abstract} = this.props
-    return (
-      <div>
-        <p>{title}</p>
-        <a href="" onClick={this.toggleState.bind(this)}>{this.state.showHide} Details</a>
-        { this.state.showDetails && <p>{abstract}</p> }
 
-        <Speaker {...this.props.speakers[0]}/>
+  render() {
+    const {Title, Abstract, Speakers} = this.props
+    return (
+      <div className="session-info">
+        <p>{Title}</p>
+        <p><Speaker {...Speakers[0]}/></p>
+        <a href="" onClick={this.toggleState.bind(this)}>{this.state.showHide} Details</a>
+        { this.state.showDetails && <p>{Abstract}</p> }
       </div>
     )
   }
 }
 
-Session.propTypes = {
-  title: React.PropTypes.string.isRequired,
-  abstract: React.PropTypes.string.isRequired,
-  speakers: React.PropTypes.array.isRequired
-}
+// Session.propTypes = {
+//   Title: React.PropTypes.string.isRequired,
+//   Abstract: React.PropTypes.string.isRequired,
+//   Speakers: React.PropTypes.array.isRequired
+// }
 
 export default Session
