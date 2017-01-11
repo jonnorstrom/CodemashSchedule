@@ -3,7 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 import Session from './Session'
 
-
+const session = {
+  title: "React Everywhere",
+  abstract: "peace out",
+  speakers: [{
+    firstName: "Len"
+  }]
+}
 
 class App extends Component {
   render() {
@@ -14,10 +20,7 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
 
-        <Session
-          title="React Everywhere"
-          abstract="Yarn is slow"
-        />
+        <Session {...session} />
 
 
       </div>
